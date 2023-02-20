@@ -55,17 +55,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               flex: 5,
               child: Container(
+                transform: Matrix4.translationValues(0.0, -20.0, 0.0),
                 clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
                     topRight: Radius.circular(25),
                     topLeft: Radius.circular(25),
                   ),
                   color: Colors.white,
-                  border: Border.all(
-                    color: Colors.green,
-                    width: 2.0,
-                  ),
                 ),
                 padding: const EdgeInsets.all(16),
                 child: Column(
@@ -74,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: EdgeInsets.symmetric(vertical: 15),
                       child: Text(
                         'Simple and Secure way to manage your money',
-                        style: TextStyle(fontSize: 28),
+                        style: TextStyle(fontSize: 24),
                         textAlign: TextAlign.center,
                       ),
                     ),
