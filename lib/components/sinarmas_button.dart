@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class SinarmasButton extends StatelessWidget {
   final String buttonText;
+  final GestureTapCallback onPressed;
 
-  const SinarmasButton(this.buttonText, {super.key});
+  const SinarmasButton(this.buttonText, {super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class SinarmasButton extends StatelessWidget {
           minHeight: 50,
         ),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.pink,
             foregroundColor: Colors.white,
