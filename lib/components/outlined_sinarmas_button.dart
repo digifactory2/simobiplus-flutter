@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class OutlinedSinarmasButton extends StatelessWidget {
   final String buttonText;
+  final GestureTapCallback onPressed;
 
-  const OutlinedSinarmasButton(this.buttonText, {super.key});
+  const OutlinedSinarmasButton(
+    this.buttonText, {
+    super.key,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class OutlinedSinarmasButton extends StatelessWidget {
           minHeight: 50,
         ),
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.white,
             foregroundColor: Colors.pink,

@@ -84,13 +84,16 @@ class MyHomePage extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        SinarmasButton('LOGIN', onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Login()),
-                          );
-                        }),
+                        SinarmasButton(
+                          'LOGIN',
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Login()),
+                            );
+                          },
+                        ),
                         const OutlinedSinarmasButton('REGISTER'),
                         const SizedBox(height: 10.0),
                         RichText(

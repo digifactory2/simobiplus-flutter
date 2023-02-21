@@ -4,7 +4,11 @@ class SinarmasButton extends StatelessWidget {
   final String buttonText;
   final GestureTapCallback onPressed;
 
-  const SinarmasButton(this.buttonText, {super.key, required this.onPressed});
+  const SinarmasButton(
+    this.buttonText, {
+    super.key,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
