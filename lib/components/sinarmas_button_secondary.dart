@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class OutlinedSinarmasButton extends StatelessWidget {
+class SinarmasButtonSecondary extends StatelessWidget {
   final String buttonText;
   final GestureTapCallback onPressed;
 
-  const OutlinedSinarmasButton(
+  const SinarmasButtonSecondary(
     this.buttonText, {
     super.key,
     required this.onPressed,
@@ -21,12 +21,6 @@ class OutlinedSinarmasButton extends StatelessWidget {
         ),
         child: OutlinedButton(
           onPressed: onPressed,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.pink,
-            elevation: 0,
-            textStyle: const TextStyle(fontSize: 18),
-          ),
           child: Text(buttonText),
         ),
       ),

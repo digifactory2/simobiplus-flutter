@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class SinarmasButton extends StatelessWidget {
+class SinarmasButtonRounded extends StatelessWidget {
   final String buttonText;
   final GestureTapCallback onPressed;
 
-  const SinarmasButton(
+  const SinarmasButtonRounded(
     this.buttonText, {
     super.key,
     required this.onPressed,
@@ -21,6 +21,11 @@ class SinarmasButton extends StatelessWidget {
         ),
         child: ElevatedButton(
           onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+          ),
           child: Text(buttonText),
         ),
       ),
