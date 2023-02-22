@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:simobiplus/components/login_drawer.dart';
 import 'package:simobiplus/components/sinarmas_button_rounded.dart';
 
 class Login extends StatefulWidget {
@@ -25,30 +26,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.white,
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            const ListTile(
-              title: Text('Products & Services'),
-            ),
-            ListTile(
-              title: const Text('Offers'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.train,
-              ),
-              title: const Text('Page 2'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const LoginDrawer(),
       body: Column(
         children: <Widget>[
           Visibility(
