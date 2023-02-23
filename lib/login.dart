@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:simobiplus/components/login_drawer.dart';
 import 'package:simobiplus/components/sinarmas_button_rounded.dart';
+import 'package:simobiplus/dashboard.dart';
 
 class Login extends StatefulWidget {
   const Login({
@@ -156,7 +157,14 @@ class _LoginState extends State<Login> {
                     const Spacer(),
                     SinarmasButtonRounded(
                       'LOGIN',
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Dashboard(),
+                          ),
+                        );
+                      },
                     ),
                     const SizedBox(height: 10),
                     RichText(
