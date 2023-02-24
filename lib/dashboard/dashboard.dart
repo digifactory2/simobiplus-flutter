@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:simobiplus/dashboard/box_simas_emoney.dart';
+import 'package:simobiplus/dashboard/box_simas_poin.dart';
+import 'package:simobiplus/dashboard/box_summary_portfolio.dart';
+import 'package:simobiplus/dashboard/special_deals.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -9,10 +13,18 @@ class Dashboard extends StatelessWidget {
       body: SingleChildScrollView(
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               width: double.infinity,
-              color: Colors.amber,
               height: 1000,
+              child: Column(
+                children: [
+                  Container(
+                    height: 280,
+                    color: Colors.grey.shade100,
+                  ),
+                  SpecialDeals(),
+                ],
+              ),
             ),
             Container(
               padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
@@ -33,7 +45,7 @@ class Dashboard extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/images/white-simobi.png',
-                        width: 70,
+                        width: 75,
                       ),
                       Row(
                         children: [
@@ -54,23 +66,24 @@ class Dashboard extends StatelessWidget {
                             ),
                           ),
                           TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                  backgroundColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  side: BorderSide(
-                                    width: 2,
-                                    color: Colors.grey.shade400,
-                                  )),
-                              child: const Text(
-                                'LOGIN',
-                                style: TextStyle(
-                                  color: Colors.black54,
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0),
                                 ),
-                              ))
+                                side: BorderSide(
+                                  width: 2,
+                                  color: Colors.grey.shade400,
+                                )),
+                            child: const Text(
+                              'LOGIN',
+                              style: TextStyle(
+                                color: Colors.black54,
+                              ),
+                            ),
+                          )
                         ],
                       )
                     ],
@@ -89,11 +102,14 @@ class Dashboard extends StatelessWidget {
             ),
             Positioned(
               top: 120,
-              left: 16,
-              right: 16,
-              child: Container(
-                color: Colors.green,
-                height: 120,
+              left: 15,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  BoxSimasEmoney(),
+                  BoxSimasPoin(),
+                  BoxSummaryPortfolio(),
+                ],
               ),
             ),
           ],
