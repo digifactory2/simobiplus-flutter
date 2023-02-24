@@ -3,12 +3,48 @@ import 'package:flutter/material.dart';
 class SpecialDeals extends StatelessWidget {
   SpecialDeals({super.key});
 
-  final List<String> items = [
-    'Lifestyle',
-    'Special Promo',
-    'Product',
-    'Investment',
-    'All Deals'
+  final List<dynamic> _items = [
+    {
+      'title': 'Lifestyle',
+      'active': true,
+    },
+    {
+      'title': 'Special Promo',
+      'active': false,
+    },
+    {
+      'title': 'Product',
+      'active': false,
+    },
+    {
+      'title': 'Investment',
+      'active': false,
+    },
+    {
+      'title': 'All Deals',
+      'active': false,
+    },
+  ];
+
+  final List<dynamic> _cards = [
+    {
+      'title': 'e-Voucher',
+      'subtitle': 'Save more and easier with e-Voucher',
+      'category': 'Lifestyle',
+      'image': 'gopay.jpg'
+    },
+    {
+      'title': 'UniPin (Game Voucher)',
+      'subtitle': 'The leading digital entertainment enabler',
+      'category': 'Lifestyle',
+      'image': 'top-up-phone-balance.jpg'
+    },
+    {
+      'title': 'Special Promo',
+      'subtitle': 'The leading digital entertainment enabler',
+      'category': 'Special Promo',
+      'image': 'gopay.jpg'
+    },
   ];
 
   @override
@@ -18,7 +54,6 @@ class SpecialDeals extends StatelessWidget {
       width: double.infinity,
       // height: 300,
       child: Column(
-        // mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
@@ -46,7 +81,7 @@ class SpecialDeals extends StatelessWidget {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
-              itemCount: items.length,
+              itemCount: _items.length,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   margin: EdgeInsets.only(
@@ -58,19 +93,25 @@ class SpecialDeals extends StatelessWidget {
                   child: TextButton(
                     onPressed: () {},
                     style: TextButton.styleFrom(
-                      backgroundColor: Colors.white,
+                      backgroundColor: _items[index]['active']
+                          ? Theme.of(context).primaryColor
+                          : Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       ),
-                      side: const BorderSide(
+                      side: BorderSide(
                         width: 1,
-                        color: Colors.grey,
+                        color: _items[index]['active']
+                            ? Theme.of(context).primaryColor
+                            : Colors.grey.shade400,
                       ),
                     ),
                     child: Text(
-                      items[index],
-                      style: const TextStyle(
-                        color: Colors.grey,
+                      _items[index]['title'],
+                      style: TextStyle(
+                        color: _items[index]['active']
+                            ? Colors.white
+                            : Colors.grey,
                       ),
                     ),
                   ),
@@ -85,6 +126,64 @@ class SpecialDeals extends StatelessWidget {
           //     fontSize: 16,
           //   ),
           // ),
+          SizedBox(
+            width: double.infinity,
+            height: 200,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemCount: _cards.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  margin: EdgeInsets.only(
+                    left: index == 0 ? 16 : 4,
+                    right: 4,
+                    top: 8,
+                    bottom: 8,
+                  ),
+                  width: 180,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.grey.shade300,
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          topLeft: Radius.circular(10),
+                        ),
+                        child: Image.asset(
+                          'assets/images/${_cards[index]['image']}',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              _cards[index]['title'],
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(_cards[index]['subtitle']),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              },
+            ),
+          )
         ],
       ),
     );
