@@ -65,7 +65,7 @@ class SpecialDeals extends StatelessWidget {
                   'Special Deals',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 18,
                   ),
                 ),
                 TextButton(
