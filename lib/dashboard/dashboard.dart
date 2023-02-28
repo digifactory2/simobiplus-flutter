@@ -26,12 +26,12 @@ class Dashboard extends StatelessWidget {
                   ),
                   SpecialDeals(),
                   Container(
-                    height: 20,
+                    height: 15,
                     color: Colors.grey.shade100,
                   ),
-                  ProductAndService(),
+                  const ProductAndService(),
                   Container(
-                    height: 20,
+                    height: 15,
                     color: Colors.grey.shade100,
                   ),
                 ],
@@ -39,7 +39,7 @@ class Dashboard extends StatelessWidget {
             ),
             const Header(),
             Positioned(
-              top: 120,
+              top: 130,
               left: 15,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
