@@ -38,6 +38,9 @@ class _ProductAndServiceState extends State<ProductAndService> {
 
   @override
   Widget build(BuildContext context) {
+    final PageController pageController =
+        PageController(initialPage: 0, viewportFraction: 0.8);
+
     return Container(
       color: Colors.white,
       width: double.infinity,
@@ -69,7 +72,7 @@ class _ProductAndServiceState extends State<ProductAndService> {
             child: PageView.builder(
               itemCount: _items.length,
               padEnds: false,
-              controller: PageController(viewportFraction: 0.8),
+              controller: pageController,
               onPageChanged: (int index) => setState(() => _index = index),
               itemBuilder: (_, i) {
                 return Container(
@@ -82,6 +85,33 @@ class _ProductAndServiceState extends State<ProductAndService> {
                   ),
                 );
               },
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List<Widget>.generate(
+              _items.length,
+              (index) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: InkWell(
+                  onTap: () {
+                    pageController.animateToPage(
+                      index,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeIn,
+                    );
+                  },
+                  child: CircleAvatar(
+                    radius: 5,
+                    backgroundColor: _index == index
+                        ? Theme.of(context).primaryColor
+                        : Colors.grey,
+                  ),
+                ),
+              ),
             ),
           ),
           const SizedBox(
