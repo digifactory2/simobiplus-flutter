@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:simobiplus/styling/paddinghorizontal.dart';
+import 'package:simobiplus/styling/paddingvertical.dart';
 
 class AccountSettingsList extends StatelessWidget {
   final String menuTitle;
@@ -20,15 +22,11 @@ class AccountSettingsList extends StatelessWidget {
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
             child: Column(
               children: [
-                SizedBox(
-                  height: 25,
-                ),
+                paddingvertical(size: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(
-                      width: 20,
-                    ),
+                    paddinghorizontal(size: 20),
                     Row(
                       children: [
                         Container(
@@ -38,9 +36,7 @@ class AccountSettingsList extends StatelessWidget {
                             width: 35,
                           ),
                         ),
-                        SizedBox(
-                          width: 20,
-                        ),
+                        paddinghorizontal(size: 20),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -74,14 +70,10 @@ class AccountSettingsList extends StatelessWidget {
                       ],
                     ),
                     Icon(Icons.arrow_forward_ios),
-                    SizedBox(
-                      width: 20,
-                    ),
+                    paddinghorizontal(size: 20),
                   ],
                 ),
-                SizedBox(
-                  height: 25,
-                ),
+                paddingvertical(size: 25),
               ],
             )));
   }
