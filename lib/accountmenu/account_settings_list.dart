@@ -69,7 +69,7 @@ class AccountSettingsList extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Icon(Icons.arrow_forward_ios),
+                    Icon(Icons.arrow_forward_ios, color: Color(0xffFA3F70)),
                     paddinghorizontal(size: 20),
                   ],
                 ),
