@@ -13,6 +13,13 @@ class RedeemPoin extends StatelessWidget {
     {'name': 'More', 'image': 'poin_more.png'},
   ];
 
+  final List<dynamic> _poinItems = [
+    {'name': 'Tokopedia', 'image': 'poin.jpg', 'poin': '20000'},
+    {'name': 'Alfamart', 'image': 'poin.jpg', 'poin': '10000'},
+    {'name': 'Tokopedia', 'image': 'poin.jpg', 'poin': '20000'},
+    {'name': 'Alfamart', 'image': 'poin.jpg', 'poin': '10000'},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -80,64 +87,61 @@ class RedeemPoin extends StatelessWidget {
               },
             ),
           ),
-          // SizedBox(
-          //   width: double.infinity,
-          //   height: 200,
-          //   child: ListView.builder(
-          //     scrollDirection: Axis.horizontal,
-          //     shrinkWrap: true,
-          //     itemCount: _cards.length,
-          //     itemBuilder: (BuildContext context, int index) {
-          //       return Container(
-          //         margin: EdgeInsets.only(
-          //           left: index == 0 ? 16 : 4,
-          //           right: 4,
-          //           top: 8,
-          //           bottom: 8,
-          //         ),
-          //         width: 180,
-          //         decoration: BoxDecoration(
-          //           borderRadius: BorderRadius.circular(10),
-          //           border: Border.all(
-          //             width: 1,
-          //             color: Colors.grey.shade300,
-          //           ),
-          //         ),
-          //         child: Column(
-          //           crossAxisAlignment: CrossAxisAlignment.start,
-          //           children: [
-          //             ClipRRect(
-          //               borderRadius: const BorderRadius.only(
-          //                 topRight: Radius.circular(10),
-          //                 topLeft: Radius.circular(10),
-          //               ),
-          //               child: Image.asset(
-          //                 'assets/images/${_cards[index]['image']}',
-          //                 fit: BoxFit.cover,
-          //               ),
-          //             ),
-          //             Padding(
-          //               padding: const EdgeInsets.all(8),
-          //               child: Column(
-          //                 crossAxisAlignment: CrossAxisAlignment.start,
-          //                 children: [
-          //                   Text(
-          //                     _cards[index]['title'],
-          //                     style: const TextStyle(
-          //                       fontWeight: FontWeight.bold,
-          //                     ),
-          //                   ),
-          //                   const SizedBox(height: 4),
-          //                   Text(_cards[index]['subtitle']),
-          //                 ],
-          //               ),
-          //             )
-          //           ],
-          //         ),
-          //       );
-          //     },
-          //   ),
-          // )
+          SizedBox(
+            width: double.infinity,
+            height: 180,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemCount: _poinItems.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  margin: EdgeInsets.only(
+                    left: index == 0 ? 16 : 4,
+                    right: 4,
+                    top: 8,
+                  ),
+                  width: 120,
+                  child: InkWell(
+                    onTap: () {
+                      print('Poin tapped');
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'assets/images/${_poinItems[index]['image']}',
+                          fit: BoxFit.fill,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/simas_point.png',
+                              width: 10,
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              '${_poinItems[index]['poin']} poin',
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black54),
+                            ),
+                            // const SizedBox(height: 4),
+                            // Text(_poinItems[index]['poin']),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          )
         ],
       ),
     );

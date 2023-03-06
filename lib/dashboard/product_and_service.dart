@@ -67,7 +67,7 @@ class _ProductAndServiceState extends State<ProductAndService> {
             ),
           ),
           SizedBox(
-            height: 80,
+            height: 90,
             width: double.infinity,
             child: PageView.builder(
               itemCount: _items.length,
@@ -115,7 +115,7 @@ class _ProductAndServiceState extends State<ProductAndService> {
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           )
         ],
       ),
