@@ -73,7 +73,7 @@ class Header extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                'Mr/Mrs Ariq Daffa Athallah Putra',
+                'Mr/Mrs John Doe',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
