@@ -52,7 +52,6 @@ class SpecialDeals extends StatelessWidget {
     return Container(
       color: Colors.white,
       width: double.infinity,
-      // height: 300,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -119,13 +118,6 @@ class SpecialDeals extends StatelessWidget {
               },
             ),
           ),
-          // const Text(
-          //   'Special Deals',
-          //   style: TextStyle(
-          //     fontWeight: FontWeight.bold,
-          //     fontSize: 16,
-          //   ),
-          // ),
           SizedBox(
             width: double.infinity,
             height: 200,

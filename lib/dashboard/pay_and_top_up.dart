@@ -4,14 +4,14 @@ class PayAndTopUp extends StatelessWidget {
   PayAndTopUp({super.key});
 
   final List<dynamic> _billers = [
-    {'title': 'OVO', 'image': 'ovo.jpg'},
-    {'title': 'GO-PAY', 'image': 'gopay.jpg'},
-    {'title': 'DANA', 'image': 'dana.jpg'},
-    {'title': 'Electricity', 'image': 'electricity.jpg'},
-    {'title': 'Prepaid', 'image': 'prepaid.jpg'},
-    {'title': 'Postpaid', 'image': 'postpaid.jpg'},
-    {'title': 'Credit Card', 'image': 'credit_card.jpg'},
-    {'title': 'See All', 'image': 'see_all.jpg'},
+    {'name': 'OVO', 'image': 'biller_ovo.png'},
+    {'name': 'GO-PAY', 'image': 'biller_gopay.png'},
+    {'name': 'DANA', 'image': 'biller_dana.png'},
+    {'name': 'Electricity', 'image': 'biller_pln.png'},
+    {'name': 'Prepaid', 'image': 'biller_prepaid.png'},
+    {'name': 'Postpaid', 'image': 'biller_postpaid.png'},
+    {'name': 'Credit Card', 'image': 'biller_credit_card.png'},
+    {'name': 'See All', 'image': 'biller_all.png'},
   ];
 
   @override
@@ -19,13 +19,11 @@ class PayAndTopUp extends StatelessWidget {
     return Container(
       color: Colors.white,
       width: double.infinity,
-      // height: 300,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Padding(
-            padding: EdgeInsets.fromLTRB(16, 20, 16, 10),
-            // padding: EdgeInsets.all(16),
+            padding: EdgeInsets.fromLTRB(16, 20, 16, 0),
             child: Text(
               'Pay / Top Up',
               style: TextStyle(
@@ -41,10 +39,19 @@ class PayAndTopUp extends StatelessWidget {
               return Container(
                 alignment: Alignment.center,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    print(biller['name']);
+                  },
                   child: Column(
                     children: [
-                      Text(biller['title']),
+                      Image.asset(
+                        'assets/images/${biller['image']}',
+                        width: 55,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(biller['name']),
                     ],
                   ),
                 ),
