@@ -35,25 +35,23 @@ class PayAndTopUp extends StatelessWidget {
           GridView.count(
             crossAxisCount: 4,
             shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
             children: _billers.map((biller) {
-              return Container(
-                alignment: Alignment.center,
-                child: InkWell(
-                  onTap: () {
-                    print(biller['name']);
-                  },
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        'assets/images/${biller['image']}',
-                        width: 55,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(biller['name']),
-                    ],
-                  ),
+              return InkWell(
+                onTap: () {
+                  print(biller['name']);
+                },
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/${biller['image']}',
+                      width: 55,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(biller['name']),
+                  ],
                 ),
               );
             }).toList(),
