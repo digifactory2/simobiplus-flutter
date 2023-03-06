@@ -5,6 +5,7 @@ import 'package:simobiplus/dashboard/box_summary_portfolio.dart';
 import 'package:simobiplus/dashboard/header.dart';
 import 'package:simobiplus/dashboard/pay_and_top_up.dart';
 import 'package:simobiplus/dashboard/product_and_service.dart';
+import 'package:simobiplus/dashboard/redeem_poin.dart';
 import 'package:simobiplus/dashboard/special_deals.dart';
 
 class Dashboard extends StatelessWidget {
@@ -36,6 +37,11 @@ class Dashboard extends StatelessWidget {
                     color: Colors.grey.shade100,
                   ),
                   PayAndTopUp(),
+                  Container(
+                    height: 15,
+                    color: Colors.grey.shade100,
+                  ),
+                  RedeemPoin(),
                   Container(
                     height: 15,
                     color: Colors.grey.shade100,
