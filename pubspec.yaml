@@ -66,7 +66,10 @@ flutter:
     - assets/images/
     - assets/images/products/
     - assets/images/membership/
-
+  fonts:
+    - family: simas
+      fonts:
+        - asset: assets/fonts/simas.ttf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -89,6 +92,7 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+
+        
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
