@@ -5,6 +5,7 @@ import 'package:simobiplus/dashboard/box_summary_portfolio.dart';
 import 'package:simobiplus/dashboard/header.dart';
 import 'package:simobiplus/dashboard/product_and_service.dart';
 import 'package:simobiplus/dashboard/special_deals.dart';
+import 'package:simobiplus/route/mainTab.routes.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
