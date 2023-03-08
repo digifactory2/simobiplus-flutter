@@ -106,7 +106,7 @@ class AccountMenu extends StatelessWidget {
                                         paddinghorizontal(size: 20),
                                         Container(
                                           child: Image.asset(
-                                            'lib/icons/kuponNew.png',
+                                            'assets/images/kuponNew.png',
                                             height: 50,
                                             width: 50,
                                           ),
@@ -158,7 +158,7 @@ class AccountMenu extends StatelessWidget {
                                         paddinghorizontal(size: 20),
                                         Container(
                                           child: Image.asset(
-                                            'lib/icons/evouchernew.png',
+                                            'assets/images/evouchernew.png',
                                             height: 50,
                                             width: 50,
                                           ),
@@ -212,7 +212,7 @@ class AccountMenu extends StatelessWidget {
                           menuTitle: 'My Score',
                           menuTxt:
                               'Checkout your score performance and see promotional offers',
-                          menuIcon: 'lib/icons/score-nilaiQ-beta.png'),
+                          menuIcon: 'assets/images/score-nilaiQ-beta.png'),
                     ],
                   ),
                 )),
@@ -247,27 +247,27 @@ class AccountMenu extends StatelessWidget {
                               menu: 'account',
                               menuTitle: 'Edit my personal data',
                               menuTxt: 'Keep your personal data updated',
-                              menuIcon: 'lib/icons/editProfile.png')),
+                              menuIcon: 'assets/images/editProfile.png')),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Change EasyPIN',
                           menuTxt:
                               'Change your current EasyPIN for login and other verification purpose',
-                          menuIcon: 'lib/icons/easypin.png'),
+                          menuIcon: 'assets/images/easypin.png'),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Change Password',
                           menuTxt:
                               'Change your current password for login and other verification purpose',
-                          menuIcon: 'lib/icons/password.png'),
+                          menuIcon: 'assets/images/password.png'),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Internet Banking',
                           menuTxt: 'Manage your internet Banking access',
-                          menuIcon: 'lib/icons/logoIB.png'),
+                          menuIcon: 'assets/images/logoIB.png'),
                       greyLine(),
                     ],
                   ),
@@ -293,27 +293,27 @@ class AccountMenu extends StatelessWidget {
                           menu: 'account',
                           menuTitle: 'Login preferences',
                           menuTxt: 'Manage your login options',
-                          menuIcon: 'lib/icons/loginPre.png'),
+                          menuIcon: 'assets/images/loginPre.png'),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Language',
                           menuTxt: 'Choose your prefered languages',
-                          menuIcon: 'lib/icons/language.png'),
+                          menuIcon: 'assets/images/language.png'),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Change device',
                           menuTxt:
                               'Move your authenticated device into a fresh new one',
-                          menuIcon: 'lib/icons/change.png'),
+                          menuIcon: 'assets/images/change.png'),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Clear SimobiPlus data',
                           menuTxt:
                               'Clearing app data resets the application to scratch',
-                          menuIcon: 'lib/icons/cleardata.png'),
+                          menuIcon: 'assets/images/cleardata.png'),
                       greyLine(),
                     ],
                   ),
@@ -339,38 +339,38 @@ class AccountMenu extends StatelessWidget {
                           menu: 'account',
                           menuTitle: 'Manage BI Ffast',
                           menuTxt: 'Manage transfer using BI Fast',
-                          menuIcon: 'lib/icons/biFasticon.png'),
+                          menuIcon: 'assets/images/biFasticon.png'),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Scheduled transfer',
                           menuTxt: 'Keep all your scheduled transfer',
-                          menuIcon: 'lib/icons/schedule.png'),
+                          menuIcon: 'assets/images/schedule.png'),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Favorite Transaction',
                           menuTxt: 'List of your favorite transaction',
-                          menuIcon: 'lib/icons/favtrx.png'),
+                          menuIcon: 'assets/images/favtrx.png'),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Scheduled Bill Payment',
                           menuTxt:
                               'Create and track your scheduled bill payment',
-                          menuIcon: 'lib/icons/autodebet.png'),
+                          menuIcon: 'assets/images/autodebet.png'),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Request for Payment from 3rd Party',
                           menuTxt: 'Check and pay your payment request now!',
-                          menuIcon: 'lib/icons/pushinvoice.png'),
+                          menuIcon: 'assets/images/pushinvoice.png'),
                       greyLine(),
                       AccountSettingsList(
                           menu: 'account',
                           menuTitle: 'Set Your Own Transfer Limit',
                           menuTxt: 'You can set your transfer limit easily',
-                          menuIcon: 'lib/icons/limit.png'),
+                          menuIcon: 'assets/images/limit.png'),
                       greyLine(),
                     ],
                   ),
