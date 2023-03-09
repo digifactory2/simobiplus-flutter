@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simobiplus/dashboard/dashboard.dart';
 import 'package:simobiplus/accountmenu/account_menu.dart';
 import 'package:simobiplus/packages/simas_icons.dart';
+import 'package:simobiplus/util/fab_bottom_app_bar.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({super.key});
@@ -48,46 +49,42 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       Simas.gear_setting
     ];
     return Scaffold(
-        // appBar: AppBar(),
-        body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Color(0xffFA3F70),
-          onPressed: () {},
-          child: Icon(Simas.scan_to_pay_e_money),
-          elevation: 0.0,
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Simas.new_home),
-              activeIcon: Icon(Simas.new_home_active),
-              label: 'HOME',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Simas.new_send),
-              activeIcon: Icon(Simas.new_send_active),
-              label: 'SEND',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Simas.new_cash),
-              activeIcon: Icon(Simas.new_cash_active),
-              label: 'Cash',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Simas.gear_setting),
-              activeIcon: Icon(Simas.gear_setting),
-              label: 'Setting',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Color(0xffFA3F70),
-          unselectedItemColor: Colors.black,
-          onTap: _onItemTapped,
-        ));
+      // appBar: AppBar(),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xffFA3F70),
+        onPressed: () {},
+        child: Icon(Simas.scan_to_pay_e_money),
+        elevation: 0.0,
+      ),
+      bottomNavigationBar: FABBottomAppBar(
+        centerItemText: 'QRIS',
+        color: Colors.black,
+        selectedColor: Colors.red,
+        // notchedShape: CircularNotchedRectangle(),
+        backgroundColor: Colors.white,
+        onTabSelected: _onItemTapped,
+        items: [
+          FABBottomAppBarItem(iconData: Simas.new_home, text: 'HOME'),
+          FABBottomAppBarItem(iconData: Simas.new_send, text: 'SEND'),
+          FABBottomAppBarItem(iconData: Simas.new_cash, text: 'Cash'),
+          FABBottomAppBarItem(iconData: Simas.gear_setting, text: 'Setting'),
+        ],
+        activeitems: [
+          FABBottomAppBarActiveItem(
+              iconData: Simas.new_home_active, text: 'HOME'),
+          FABBottomAppBarActiveItem(
+              iconData: Simas.new_send_active, text: 'SEND'),
+          FABBottomAppBarActiveItem(
+              iconData: Simas.new_cash_active, text: 'Cash'),
+          FABBottomAppBarActiveItem(
+              iconData: Simas.gear_setting, text: 'Setting'),
+        ],
+      ),
+    );
   }
 }
 
