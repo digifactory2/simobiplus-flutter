@@ -25,17 +25,12 @@ class _FundTransferPaymentState extends State<FundTransferPayment> {
           children: <Widget>[
             //Header Container
             Container(
-              padding: const EdgeInsets.all(8.0),
-              color: Colors.white,
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: Colors.pink,
-                    size: 30,
-                  )),
-            ),
+                padding: const EdgeInsets.all(8.0),
+                color: Colors.white,
+                alignment: Alignment.centerLeft,
+                child: BackButton(
+                  color: Colors.pink,
+                )),
 
             //Body Container
             Expanded(

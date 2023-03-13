@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simobiplus/dashboard/dashboard.dart';
 import 'package:simobiplus/accountmenu/account_menu.dart';
+import 'package:simobiplus/fundtransfer/fundtransfer.dart';
 import 'package:simobiplus/packages/simas_icons.dart';
 import 'package:simobiplus/util/fab_bottom_app_bar.dart';
 
@@ -19,10 +20,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Dashboard(),
-    Text(
-      'Index 1: Send',
-      style: optionStyle,
-    ),
+    FundTransfer(),
     // Text(
     //   'Index 2: QRIS',
     //   style: optionStyle,
