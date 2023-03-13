@@ -3,11 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:simobiplus/components/login_drawer.dart';
 import 'package:simobiplus/components/sinarmas_button_rounded.dart';
 import 'package:simobiplus/dashboard/dashboard.dart';
-<<<<<<< HEAD
-import 'package:simobiplus/route/mainTab.routes.dart';
-=======
 import 'package:simobiplus/bottombar.dart';
->>>>>>> dev
 
 class Login extends StatefulWidget {
   const Login({
