@@ -1,0 +1,275 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:simobiplus/components/sinarmas_button_rounded.dart';
+import 'package:simobiplus/login.dart';
+
+class FundTransferPayment extends StatefulWidget {
+  const FundTransferPayment({super.key});
+
+  @override
+  State<FundTransferPayment> createState() => _FundTransferPaymentState();
+}
+
+class _FundTransferPaymentState extends State<FundTransferPayment> {
+  bool isChecked = false;
+  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //You should use `Scaffold` if you have `TextField` in body.
+      //Otherwise on focus your `TextField` won`t scroll when keyboard popup.
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            //Header Container
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              color: Colors.white,
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: Colors.pink,
+                    size: 30,
+                  )),
+            ),
+
+            //Body Container
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 0.0),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10.0),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: Colors.green),
+                            child: Text(
+                              "Rp",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            "Set the amount",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                              flex: 1,
+                              child: TextFormField(
+                                textAlign: TextAlign.center,
+                                decoration: InputDecoration(
+                                  // labelText: '0',
+                                  hintText: "0",
+                                  hintStyle: new TextStyle(
+                                      color: Colors.grey,
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 20.0),
+                                  floatingLabelStyle: TextStyle(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
+                                  prefixIcon: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20.0, vertical: 20),
+                                    child: Text(
+                                      "Rp",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ),
+                                  ),
+                                  suffixIcon: const Icon(
+                                    Icons.edit,
+                                    color: Colors.black,
+                                    size: 30,
+                                  ),
+                                  border: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                      width: 1,
+                                      color: Colors.grey,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                      width: 1,
+                                      color: Colors.grey,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              )),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 5, vertical: 20),
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                              child: Checkbox(
+                            value: isChecked,
+                            onChanged: (bool? value) {
+                              setState(() {
+                                isChecked = value!;
+                              });
+                            },
+                          )),
+                          Expanded(
+                              child: Text(
+                            "Schedule transfer",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 18),
+                          ))
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      child: Divider(
+                        height: 1,
+                        color: Colors.grey,
+                        thickness: 0.4,
+                      ),
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 5, vertical: 20),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                                child: Icon(Icons.account_balance_wallet)),
+                            SizedBox(width: 20),
+                            Expanded(
+                                child: Text(
+                              "Select source account",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.normal),
+                            )),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                child: Text(
+                                  "Select source account",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 18),
+                                ),
+                              ),
+                              Container(
+                                child: Icon(Icons.more_vert_rounded),
+                              )
+                            ],
+                          ),
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      child: Divider(
+                        height: 1,
+                        color: Colors.grey,
+                        thickness: 0.4,
+                      ),
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Additional information (optional)",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.black),
+                          )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                              flex: 1,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  labelText: 'Description',
+                                  floatingLabelStyle: TextStyle(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              )),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      child: SinarmasButtonRounded(
+                        'NEXT',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Login(),
+                            ),
+                          );
+                        },
+                      ),
+                    )
+                    // Container(
+                    //   color: Colors.green,
+                    //   height: 300.0,
+                    //   alignment: Alignment.center,
+                    //   child: Text("Content 1"),
+                    // ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

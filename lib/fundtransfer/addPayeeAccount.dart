@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:simobiplus/fundtransfer/fundtransferPayment.dart';
 import 'package:simobiplus/fundtransfer/paymentHistoryTrf.dart';
+import 'package:simobiplus/login.dart';
 
 class AddPayeeAccount extends StatefulWidget {
   const AddPayeeAccount({super.key});
@@ -11,6 +13,43 @@ class AddPayeeAccount extends StatefulWidget {
 }
 
 class _AddPayeeAccountState extends State<AddPayeeAccount> {
+  final List<dynamic> _itemList = [
+    {
+      'text': 'Fendi Setiyanto 1',
+      'subText': '0047789567',
+      'secondaryText': 'PT. Bank Sinarmas, Tbk.'
+    },
+    {
+      'text': 'Fendi Setiyanto 2',
+      'subText': '0047789567',
+      'secondaryText': 'PT. Bank Sinarmas, Tbk.'
+    },
+    {
+      'text': 'Fendi Setiyanto 3',
+      'subText': '0047789567',
+      'secondaryText': 'PT. Bank Sinarmas, Tbk.'
+    },
+    {
+      'text': 'Fendi Setiyanto',
+      'subText': '0047789567',
+      'secondaryText': 'PT. Bank Sinarmas, Tbk.'
+    },
+    {
+      'text': 'Fendi Setiyanto',
+      'subText': '0047789567',
+      'secondaryText': 'PT. Bank Sinarmas, Tbk.'
+    },
+    {
+      'text': 'Fendi Setiyanto',
+      'subText': '0047789567',
+      'secondaryText': 'PT. Bank Sinarmas, Tbk.'
+    },
+    {
+      'text': 'Fendi Setiyanto',
+      'subText': '0047789567',
+      'secondaryText': 'PT. Bank Sinarmas, Tbk.'
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,56 +95,92 @@ class _AddPayeeAccountState extends State<AddPayeeAccount> {
                         child: DefaultTabController(
                             length: 3,
                             child: Container(
-                              child: TabBar(tabs: [
-                                Tab(
-                                  child: Text(
-                                    "Account Number",
-                                    style: TextStyle(color: Colors.black),
+                              child: TabBar(
+                                tabs: [
+                                  Tab(
+                                    child: Text(
+                                      "Account Number",
+                                      style: TextStyle(color: Colors.black),
+                                    ),
                                   ),
-                                ),
-                                Tab(
-                                  child: Text(
-                                    "Phone Number",
-                                    style: TextStyle(color: Colors.black),
+                                  Tab(
+                                    child: Text(
+                                      "Phone Number",
+                                      style: TextStyle(color: Colors.black),
+                                    ),
                                   ),
-                                ),
-                                Tab(
-                                  child: Text(
-                                    "Email Address",
-                                    style: TextStyle(color: Colors.black),
+                                  Tab(
+                                    child: Text(
+                                      "Email Address",
+                                      style: TextStyle(color: Colors.black),
+                                    ),
                                   ),
-                                ),
-                              ]),
+                                ],
+                                isScrollable: true,
+                                indicatorColor: Colors.pink,
+                                labelPadding:
+                                    EdgeInsets.only(left: 30, right: 30),
+                              ),
                             ))),
                     SizedBox(height: 30),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Account number',
-                          floatingLabelStyle: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              width: 1,
-                              color: Colors.grey,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                              flex: 4,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  labelText: 'Account number',
+                                  floatingLabelStyle: TextStyle(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
+                                  border: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                      width: 1,
+                                      color: Colors.grey,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                      width: 1,
+                                      color: Colors.grey,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              )),
+                          SizedBox(width: 10),
+                          Expanded(
+                            flex: 1,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle, color: Colors.pink),
+                              child: IconButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const FundTransferPayment(),
+                                      ),
+                                    );
+                                  },
+                                  icon: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white,
+                                  )),
                             ),
-                            borderRadius: BorderRadius.circular(10),
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              width: 1,
-                              color: Colors.grey,
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
+                        ],
                       ),
                     ),
+
                     SizedBox(height: 20),
                     Container(
-                      child: PaymentHistoryTrf(),
+                      child: PaymentHistoryTrf(
+                          isBiFast: false, itemList: _itemList),
                     ),
                     // Container(
                     //   color: Colors.green,
