@@ -9,9 +9,9 @@ class Header extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
       height: 200,
       width: double.infinity,
-      decoration: const BoxDecoration(
-        color: Colors.grey,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor, // Header background color
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(30),
           bottomRight: Radius.circular(30),
         ),
@@ -44,22 +44,23 @@ class Header extends StatelessWidget {
                       size: 30,
                     ),
                   ),
+                  // Login / Logout button
                   TextButton(
                     onPressed: () {},
                     style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                         side: BorderSide(
-                          width: 2,
+                          width: 1,
                           color: Colors.grey.shade400,
                         )),
-                    child: const Text(
-                      'LOGIN',
+                    child: Text(
+                      'LOGOUT',
                       style: TextStyle(
-                        color: Colors.black54,
+                        color: Theme.of(context).primaryColor,
+                        // color: Colors.black54,
                       ),
                     ),
                   )
@@ -67,15 +68,29 @@ class Header extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(height: 5),
-          const Text(
-            'Mr/Mrs Ariq Daffa Athallah Putra',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 15,
-            ),
-          )
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Mr/Mrs John Doe',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  print('membership clicked');
+                },
+                child: Image.asset(
+                  'assets/images/membership/silver.png',
+                  width: 100,
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
