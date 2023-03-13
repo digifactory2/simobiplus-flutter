@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:simobiplus/accountmenu/account_settings_list.dart';
-import 'package:simobiplus/accountmenu/account_editprofile.dart';
+import 'package:simobiplus/pages/accountmenu/account_settings_list.dart';
+import 'package:simobiplus/pages/accountmenu/account_editprofile.dart';
 import 'package:simobiplus/styling/greyLine.dart';
 import 'package:simobiplus/styling/paddinghorizontal.dart';
 import 'package:simobiplus/styling/paddingvertical.dart';

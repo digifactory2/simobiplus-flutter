@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simobiplus/fundtransfer/addPayeeAccount.dart';
 import 'package:simobiplus/fundtransfer/listTransferType.dart';
-import 'package:simobiplus/login.dart';
+import 'package:simobiplus/pages/login/login.dart';
 
 class FundTransfer extends StatefulWidget {
   const FundTransfer({

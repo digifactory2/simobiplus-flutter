@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:simobiplus/components/sinarmas_button_rounded.dart';
-import 'package:simobiplus/login.dart';
+import 'package:simobiplus/pages/login/login.dart';
 
 class FundTransferPayment extends StatefulWidget {
   const FundTransferPayment({super.key});

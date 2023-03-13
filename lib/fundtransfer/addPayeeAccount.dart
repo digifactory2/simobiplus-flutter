@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:simobiplus/fundtransfer/fundtransferPayment.dart';
 import 'package:simobiplus/fundtransfer/paymentHistoryTrf.dart';
-import 'package:simobiplus/login.dart';
 
 class AddPayeeAccount extends StatefulWidget {
   const AddPayeeAccount({super.key});

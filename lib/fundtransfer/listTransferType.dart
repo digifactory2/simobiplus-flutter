@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:simobiplus/login.dart';
 
 class ListTransferType extends StatelessWidget {
   final String iconImagePath;
