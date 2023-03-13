@@ -5,7 +5,7 @@ import 'package:simobiplus/theme/app_theme.dart';
 import 'package:simobiplus/components/sinarmas_button_secondary.dart';
 import 'package:simobiplus/components/sinarmas_button.dart';
 
-import 'package:simobiplus/login.dart';
+import 'package:simobiplus/pages/login/login.dart';
 
 void main() {
   runApp(const MyApp());

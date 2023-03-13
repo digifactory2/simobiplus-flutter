@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:simobiplus/dashboard/box_simas_emoney.dart';
-import 'package:simobiplus/dashboard/box_simas_poin.dart';
-import 'package:simobiplus/dashboard/box_summary_portfolio.dart';
-import 'package:simobiplus/dashboard/header.dart';
-import 'package:simobiplus/dashboard/pay_and_top_up.dart';
-import 'package:simobiplus/dashboard/product_and_service.dart';
-import 'package:simobiplus/dashboard/redeem_poin.dart';
-import 'package:simobiplus/dashboard/special_deals.dart';
+import 'package:simobiplus/pages/dashboard/box_simas_emoney.dart';
+import 'package:simobiplus/pages/dashboard/box_simas_poin.dart';
+import 'package:simobiplus/pages/dashboard/box_summary_portfolio.dart';
+import 'package:simobiplus/pages/dashboard/header.dart';
+import 'package:simobiplus/pages/dashboard/pay_and_top_up.dart';
+import 'package:simobiplus/pages/dashboard/product_and_service.dart';
+import 'package:simobiplus/pages/dashboard/redeem_poin.dart';
+import 'package:simobiplus/pages/dashboard/special_deals.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
