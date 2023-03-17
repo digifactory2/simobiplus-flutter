@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:simobiplus/components/sinarmas_button_rounded.dart';
 import 'package:simobiplus/fundtransfer/sourceAccount.dart';
 import 'package:simobiplus/packages/simas_icons.dart';
+import 'package:simobiplus/pages/easypin/easypin.dart';
 import 'package:simobiplus/pages/login/login.dart';
 import 'package:intl/intl.dart';
 
@@ -358,7 +359,7 @@ class _FundTransferConfirmationState extends State<FundTransferConfirmation> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Login(),
+                              builder: (context) => const Easypin(),
                             ),
                           );
                         },
