@@ -19,7 +19,7 @@ class ListTransferType extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         child: Container(
           padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
@@ -29,35 +29,39 @@ class ListTransferType extends StatelessWidget {
               )),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: <Widget>[
               // icon
-              Row(
-                children: [
-                  Container(
-                    height: 50,
-                    child: Image.asset(iconImagePath),
-                  ),
-                  // text
-                  SizedBox(width: 20),
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          typeTitle,
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal, fontSize: 18),
-                        ),
-                        SizedBox(height: 8),
-                        Text(
-                          subName,
-                          style:
-                              TextStyle(color: Colors.grey[600], fontSize: 14),
-                        )
-                      ],
+              Expanded(
+                child: Row(
+                  children: [
+                    Container(
+                      height: 50,
+                      child: Image.asset(iconImagePath),
                     ),
-                  ),
-                ],
+                    // text
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              typeTitle,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.normal, fontSize: 18),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              subName,
+                              style: TextStyle(
+                                  color: Colors.grey[600], fontSize: 14),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Icon(Icons.arrow_forward_ios),
             ],

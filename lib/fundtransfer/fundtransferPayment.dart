@@ -1,6 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:simobiplus/components/sinarmas_button_rounded.dart';
+import 'package:simobiplus/fundtransfer/fundtransferConfirmation.dart';
+import 'package:simobiplus/fundtransfer/sourceAccount.dart';
+import 'package:simobiplus/packages/simas_icons.dart';
 import 'package:simobiplus/pages/login/login.dart';
 
 class FundTransferPayment extends StatefulWidget {
@@ -13,6 +16,20 @@ class FundTransferPayment extends StatefulWidget {
 class _FundTransferPaymentState extends State<FundTransferPayment> {
   bool isChecked = false;
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  final List<dynamic> _itemList = [
+    {
+      'accountName': 'Fendi Setiyanto',
+      'accountNumber': '38085713881671',
+      'productName': 'Emoney Account',
+      'balance': '2000000'
+    },
+    {
+      'accountName': 'Fendi Setiyanto',
+      'accountNumber': '38085713881671',
+      'productName': 'Tabungan Simas Payroll',
+      'balance': '1800000'
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +179,11 @@ class _FundTransferPaymentState extends State<FundTransferPayment> {
                         child: Row(
                           children: <Widget>[
                             Container(
-                                child: Icon(Icons.account_balance_wallet)),
+                                child: Icon(
+                              Simas.wallet,
+                              color: Colors.yellow[800],
+                              size: 40,
+                            )),
                             SizedBox(width: 20),
                             Expanded(
                                 child: Text(
@@ -180,7 +201,17 @@ class _FundTransferPaymentState extends State<FundTransferPayment> {
                         padding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SourceAccount(
+                                  isBiFast: false,
+                                  itemList: [],
+                                ),
+                              ),
+                            );
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -246,7 +277,8 @@ class _FundTransferPaymentState extends State<FundTransferPayment> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Login(),
+                              builder: (context) =>
+                                  const FundTransferConfirmation(),
                             ),
                           );
                         },

@@ -114,7 +114,7 @@ class _PaymentHistoryTrfState extends State<PaymentHistoryTrf> {
                   padding: EdgeInsets.symmetric(horizontal: 5),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      labelText: 'Account number',
+                      hintText: 'Account number',
                       floatingLabelStyle: TextStyle(
                         color: Theme.of(context).primaryColor,
                       ),

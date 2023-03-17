@@ -66,7 +66,7 @@ class _FundTransferState extends State<FundTransfer> {
                       'Transfer Type',
                       style: TextStyle(
                           fontSize: 20,
-                          color: Colors.blueAccent,
+                          color: Colors.blueGrey,
                           fontWeight: FontWeight.bold),
                     ),
                   ),

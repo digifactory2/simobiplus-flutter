@@ -125,7 +125,7 @@ class _AddPayeeAccountState extends State<AddPayeeAccount> {
                               flex: 4,
                               child: TextFormField(
                                 decoration: InputDecoration(
-                                  labelText: 'Account number',
+                                  hintText: 'Account number',
                                   floatingLabelStyle: TextStyle(
                                     color: Theme.of(context).primaryColor,
                                   ),
