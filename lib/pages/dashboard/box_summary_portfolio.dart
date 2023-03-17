@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simobiplus/packages/simas_icons.dart';
+import 'package:simobiplus/pages/easypin/easypin.dart';
 
 class BoxSummaryPortfolio extends StatelessWidget {
   const BoxSummaryPortfolio({super.key});
@@ -18,7 +19,12 @@ class BoxSummaryPortfolio extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-          print('Summary Portfolio');
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Easypin(),
+            ),
+          );
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
