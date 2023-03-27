@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simobiplus/bottombar.dart';
 import 'package:simobiplus/packages/simas_icons.dart';
 import 'package:simobiplus/pages/easypin/easypin.dart';
 
@@ -22,7 +23,9 @@ class BoxSummaryPortfolio extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Easypin(),
+              builder: (context) => const Easypin(
+                continueTo: BottomBar(),
+              ),
             ),
           );
         },

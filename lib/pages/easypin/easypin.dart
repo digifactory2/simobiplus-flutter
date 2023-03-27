@@ -7,7 +7,10 @@ import 'package:simobiplus/packages/simas_icons.dart';
 class Easypin extends StatefulWidget {
   const Easypin({
     super.key,
+    required this.continueTo,
   });
+
+  final Widget continueTo;
 
   @override
   State<Easypin> createState() => _EasypinState();
@@ -67,21 +70,12 @@ class _EasypinState extends State<Easypin> {
             flex: 8,
             child: Container(
               width: double.infinity,
-              // transform: Matrix4.translationValues(0.0, -70.0, 0.0),
-              // clipBehavior: Clip.hardEdge,
-              // decoration: const BoxDecoration(
-              //   borderRadius: BorderRadius.only(
-              //     topRight: Radius.circular(25),
-              //     topLeft: Radius.circular(25),
-              //   ),
-              // ),
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Form(
                 key: _EasypinFormKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // SizedBox(height: !_keyboardVisible ? 20 : 120),
                     const SizedBox(height: 30),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -166,7 +160,7 @@ class _EasypinState extends State<Easypin> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const BottomBar(),
+                            builder: (context) => widget.continueTo,
                           ),
                         );
                       },
