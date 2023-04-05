@@ -29,6 +29,7 @@ class _SummaryPortofolioHeaderState extends State<SummaryPortofolioHeader> {
       width: double.infinity,
       height: _expanded ? 350 : 200,
       padding: const EdgeInsets.fromLTRB(40, 80, 40, 40),
+      margin: const EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
           bottomRight: Radius.circular(25),
