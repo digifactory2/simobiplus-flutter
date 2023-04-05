@@ -70,6 +70,8 @@ flutter:
     - assets/images/
     - assets/images/products/
     - assets/images/membership/
+    - assets/images/cards/
+
   fonts:
     - family: simas
       fonts:
